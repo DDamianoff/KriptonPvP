@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Practice";
+}
+
+
+@{
+    const string cube = "<div class=\"col bg-green border-1 text-center\"> ey</div>";
+}
+
+<div class="container-fluid">
+
+    <div class="row bg-primary text-white">
+        @foreach (var _ in Enumerable.Range(1, 3))
+        {
+            @Html.Raw(cube)
+        }
+        
+    </div>
+
+
+    <div class="row bg-primary text-white">
+        @foreach (var _ in Enumerable.Range(1, 10))
+        {
+            @Html.Raw(cube)
+        }
+    </div>
+
+
+   <div class="row bg-primary text-white">
+        @foreach (var _ in Enumerable.Range(1, 2))
+        {
+            @Html.Raw(cube)
+        }
+    </div>
+
+
+    <div class="row bg-primary text-white">
+        @foreach (var _ in Enumerable.Range(1, 5))
+        {
+            @Html.Raw(cube)
+        }
+    </div>
+
+
+    <div class="row bg-primary text-white">
+        @Html.Raw(cube)
+    </div>
+</div>
