@@ -4,8 +4,10 @@
 
 
 @{
-    const string cube = "<div class=\"col bg-green border-1 text-center\"> ey</div>";
+    const string cube = "<div class=\"col bg-green border-1 text-center border\"> ey</div>";
 }
+
+<h2>Primer reto:</h2>
 
 <div class="container-fluid">
 
@@ -26,7 +28,7 @@
     </div>
 
 
-   <div class="row bg-primary text-white">
+    <div class="row bg-primary text-white">
         @foreach (var _ in Enumerable.Range(1, 2))
         {
             @Html.Raw(cube)
@@ -44,5 +46,34 @@
 
     <div class="row bg-primary text-white">
         @Html.Raw(cube)
+    </div>
+</div>
+
+<h2>Segundo reto:</h2>
+
+<div class="container-fluid">
+    
+    <div class="row">
+        @foreach (var column in Enumerable.Range(1, 4))
+        {
+            <div class="col-6 col-lg bg-success text-white border text-center">
+                <p>
+                    Fila 1
+                    /Col @column
+                </p>
+            </div>
+        }
+    </div>
+
+    <div class="row">
+        @foreach (var column in Enumerable.Range(1, 10))
+        {
+             <div class="col-12 col-lg bg-success text-white border text-center">
+                <p>
+                    Fila 2
+                    /Col @column
+                </p>
+            </div>
+        }
     </div>
 </div>
