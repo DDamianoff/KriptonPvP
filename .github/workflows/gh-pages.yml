@@ -7,6 +7,7 @@ on:
 
 env:
   EXPORT_FOLDER: build
+  DOTNET_VERSION: 6.0.x
 
 jobs:
   build:
@@ -18,7 +19,7 @@ jobs:
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 3.1.301
+          dotnet-version: ${{env.DOTNET_VERSION}}
       - name: .NET Publish
         run: dotnet publish ./Kripton.Landing/*.csproj --configuration Release --output ${{env.EXPORT_FOLDER}}
       - name: Deploy to Github Pages
