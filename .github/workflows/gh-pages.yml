@@ -16,8 +16,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Setup .NET, publish and deploy
+      - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: ${{env.DOTNET_VERSION}}
+      - name: Publish and deploy  
         run: dotnet publish ./${{env.TARGET_PROJECT_NAME}}/*.csproj --configuration Release -p:GHPages=true
