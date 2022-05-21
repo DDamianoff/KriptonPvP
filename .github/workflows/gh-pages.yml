@@ -1,0 +1,23 @@
+name: Deploy BlazorWA to gh-pages
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  EXPORT_FOLDER: build
+  DOTNET_VERSION: 6.0.x
+  TARGET_PROJECT_NAME: Kripton.Landing
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup .NET, publish and deploy
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{env.DOTNET_VERSION}}
+        run: dotnet publish ./${{env.TARGET_PROJECT_NAME}}/*.csproj --configuration Release -p:GHPages=true
